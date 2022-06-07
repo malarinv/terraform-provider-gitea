@@ -5,6 +5,8 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/plugin"
 )
 
+var Version = "development"
+
 func main() {
 	plugin.Serve(&plugin.ServeOpts{
 		ProviderFunc: gitea.Provider})
