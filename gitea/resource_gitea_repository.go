@@ -50,7 +50,8 @@ const (
 func resourceRepoRead(d *schema.ResourceData, meta interface{}) (err error) {
 	client := meta.(*gitea.Client)
 
-	id, err := strconv.ParseInt(d.Id(), 10, 64)
+	repoID := d.Get("id").(string)
+	id, err := strconv.ParseInt(repoID, 10, 64)
 	var resp *gitea.Response
 
 	if err != nil {
